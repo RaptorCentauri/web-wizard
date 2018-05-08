@@ -1,0 +1,25 @@
+{
+  "name": "web-wizard",
+  "version": "1.0.0",
+  "description": "An application to programmatically boilerplate a full stack web application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaptorCentauri/web-wizard.git"
+  },
+  "author": "Dave Leo Shilander",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaptorCentauri/web-wizard/issues"
+  },
+  "homepage": "https://github.com/RaptorCentauri/web-wizard#readme",
+  "dependencies": {
+    "npm": "^6.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^6.0.0"
+  }
+}
