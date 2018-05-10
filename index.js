@@ -9,45 +9,35 @@ console.log(`PLEASE NOTE: This application is best used by those who already hav
 console.log(`==========================================================================================================================================================================================================================================`);
 console.log('');
 
-console.log(ProjectDetails.name)
+
+let setProjectName = (str) => {
+    ProjectDetails.name = str;
+}
+
+let setProjectDatabase = (str) => {
+    ProjectDetails.database = str;
+}
+
+let setProjectModels = (...str) => {
+    ProjectDetails.models = str;
+}
+
+let setProjectFolderStructure = (str) => {
+    ProjectDetails.folderStructure = str;
+}
 
 
 
 
 
-// prompt.start();
+setProjectName("Theres a Land That I heard of");
+
+console.log(ProjectDetails.name);
 
 
-// const getProjectName = async () =>{
+setProjectModels('red');
 
-//     await prompt.get([
-//         {
-//             name: 'name',
-//             required: true,
-//             type: 'string',
-//             pattern: /^\w+$/,
-//             message: "A project name cannot contain spaces"
-//         }], (err, result) => {
-//             return result.name
-//         })
-
-//     // prompt.stop()
-
-//     // console.log(ProjectDetails.name);
-    
-
-// }
-
-
-
-
-
-//What is the name of your project?
-//What database are you using?
-//What are your models (seperated by spaces)
-//Which folder structure do you want to use?
-//
-
+console.log(ProjectDetails);
 
 
 
