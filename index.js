@@ -1,4 +1,5 @@
 import ProjectDetails from "./ProjectDetails";
+import buildFolderStructure from "./folderStucture";
 
 // var prompt = require('prompt');
 
@@ -35,9 +36,15 @@ setProjectName("Theres a Land That I heard of");
 console.log(ProjectDetails.name);
 
 
-setProjectModels('red');
+setProjectModels('red', 'white', 'blue');
+
+setProjectFolderStructure('grouped')
 
 console.log(ProjectDetails);
+
+setProjectFolderStructure(ProjectDetails.folderStructure)
+
+buildFolderStructure()
 
 
 
