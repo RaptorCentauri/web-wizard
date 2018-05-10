@@ -1,4 +1,6 @@
-const readline = require('readline');
+import ProjectDetails from "./ProjectDetails";
+
+// var prompt = require('prompt');
 
 console.log(`==========================================================================================================================================================================================================================================`);
 console.log(`WELCOME TO WEB-WIZARD!`);
@@ -7,20 +9,46 @@ console.log(`PLEASE NOTE: This application is best used by those who already hav
 console.log(`==========================================================================================================================================================================================================================================`);
 console.log('');
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+console.log(ProjectDetails.name)
 
 
 
-const getProjectName = () => {
-    let projectName = rl.question('What is the name of you project? \n', (data) => { return data })
 
 
-    console.log(`You have named your project "${projectName}"`)
-}
+// prompt.start();
 
-getProjectName();
 
-process.stdin.setEncoding('utf8');
+// const getProjectName = async () =>{
+
+//     await prompt.get([
+//         {
+//             name: 'name',
+//             required: true,
+//             type: 'string',
+//             pattern: /^\w+$/,
+//             message: "A project name cannot contain spaces"
+//         }], (err, result) => {
+//             return result.name
+//         })
+
+//     // prompt.stop()
+
+//     // console.log(ProjectDetails.name);
+    
+
+// }
+
+
+
+
+
+//What is the name of your project?
+//What database are you using?
+//What are your models (seperated by spaces)
+//Which folder structure do you want to use?
+//
+
+
+
+
+

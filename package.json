@@ -4,6 +4,7 @@
   "description": "An application to programmatically boilerplate a full stack web application",
   "main": "index.js",
   "scripts": {
+    "start": "node starter.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,12 @@
     "npm": "^6.0.0"
   },
   "devDependencies": {
-    "fs-extra": "^6.0.0"
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "fs-extra": "^6.0.0",
+    "prompt": "^1.0.0"
   }
 }
