@@ -17,7 +17,6 @@ const createAPIRoutes = (model) => {
 
     })
 
-
     `
 
     return apiRouteFile
