@@ -1,17 +1,37 @@
 import ProjectDetails from "./ProjectDetails";
-import {ensureDir} from 'fs-extra'
+import fs from 'fs-extra';
+import createServerJS from "./fileCreators/createServerJS";
 
-const buildGroupedFolderStructure = async (arr) => {
+
+
+const buildGroupedFolderStructure = async (parentDir, arr) => {
+
+    
     console.log('money shot');
+    
+    // let parentDir = await ensureDir(`./${str}`)
 
+
+//API ROUTES
     for (const element of arr) {
         try {
-            await ensureDir(`./MyNewTEStDIR/${element}`)
+            await fs.ensureFile(`./${parentDir}/routes/${element}-routes.js`)
         } catch (err) {
             console.log(err);
         } 
     }
 
+//MODELS
+    for (const element of arr) {
+        try {
+            await fs.ensureFile(`./${parentDir}/models/${element}-model.js`)
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
+    //ServerJS
+        fs.outputFile(`./${parentDir}/server.js`, createServerJS() )
 }
 
 
@@ -24,7 +44,7 @@ const buildFolderStructure= () =>{
     
     switch (ProjectDetails.folderStructure) {
 
-        case 'grouped': buildGroupedFolderStructure(ProjectDetails.models);
+        case 'grouped': buildGroupedFolderStructure(ProjectDetails.name, ProjectDetails.models);
 
             break;
 
