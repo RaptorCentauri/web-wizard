@@ -1,7 +1,9 @@
 import ProjectDetails from "./ProjectDetails";
 import fs from 'fs-extra';
 import createServerJS from "./fileCreators/createServerJS";
+import createAPIRoutes from "./fileCreators/createAPIRoutes";
 
+// createAPIRoutes
 
 
 const buildGroupedFolderStructure = async (parentDir, arr) => {
@@ -15,7 +17,7 @@ const buildGroupedFolderStructure = async (parentDir, arr) => {
 //API ROUTES
     for (const element of arr) {
         try {
-            await fs.ensureFile(`./${parentDir}/routes/${element}-routes.js`)
+            await fs.outputFile(`./${parentDir}/routes/${element}-routes.js`, createAPIRoutes(element))
         } catch (err) {
             console.log(err);
         } 
