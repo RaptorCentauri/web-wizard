@@ -1,7 +1,7 @@
-const createAPIRoutes = (model) => {
+const createGroupedAPIRoutes = (model) => {
 
     let apiRouteFile =
-    `
+        `
     app.get('/api/${model}/', (req, res) => {
 
     })
@@ -21,4 +21,4 @@ const createAPIRoutes = (model) => {
     return apiRouteFile
 }
 
-export default createAPIRoutes
+export default createAPIRoutesa

@@ -31,14 +31,14 @@ let setProjectFolderStructure = (str) => {
 
 
 
-setProjectName("Rainbow-Bridge");
+setProjectName("Zoo");
 
 console.log(ProjectDetails.name);
 
 
-setProjectModels('red', 'white', 'blue');
+setProjectModels('Lion', 'Tiger', 'Bear');
 
-setProjectFolderStructure('grouped')
+setProjectFolderStructure('isolated')
 
 console.log(ProjectDetails);
 
