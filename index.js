@@ -30,13 +30,14 @@ let setProjectFolderStructure = (str) => {
 
 
 
-
 setProjectName("Zoo");
+
+
 
 console.log(ProjectDetails.name);
 
 
-setProjectModels('Lion', 'Tiger', 'Bear');
+// setProjectModels('Lion', ['Tiger'], ['Bear']);
 
 setProjectFolderStructure('isolated')
 
