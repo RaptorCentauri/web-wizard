@@ -2,7 +2,7 @@ const myssqlCreator = () => {
 
     let mysqlFile =
     `
-    selectAll = async (tableName) => {
+    select = async (tableName, col, expr, val) => {
         let queryString = \`SELECT * FROM \${ tableName }\`;
 
         try {
@@ -38,6 +38,17 @@ const myssqlCreator = () => {
         }
     }
 
+    delete = async (tableName, col, val) => {
+        let queryString = \`DELETE FROM \${tableName} WHERE \${col} IN \${val}\`
+
+        try {
+            let dbResult = await connection.query(queryString);
+            return dbResult;
+        } catch (err) {
+            console.log(err)
+        }        
+    }
+
 
 
 
@@ -61,38 +72,58 @@ const myssqlCreator = () => {
     return mysqlFile
 }
 
-export default myssqlCreator
+// export default myssqlCreator
 
 
 
+const select = async (tableName, col, expr, val) => {
+    let queryString;
 
-
-
-db = {
-
-
-
-    selectSpecific: function (tableOne, tableTwo, colOne, colTwo, colThree, value, cb) {
-
-        let queryString = `SELECT * FROM ${tableOne} JOIN ${tableTwo} ON ${tableOne}.${colOne} = ${tableTwo}.${colTwo} WHERE ${tableOne}.${colThree} = ${value}`
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
-
-    verify: function (tableName, colOne, colTwo, userName, password, cb) {
-        let queryString = `SELECT * FROM ${tableName} WHERE ${colOne}="${userName}" AND ${colTwo}="${password}"`
-
-        connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-
+    if(!col){
+        queryString = `SELECT * FROM ${tableName}`;
+    }
+    else{
+        queryString = `SELECT * FROM ${tableName} WHERE ${col} ${expr} ${val}`;
+    }
+    console.log(queryString);
+    
+        // try {
+        //     let dbResult = await connection.query(queryString);
+        //     return dbResult;
+        // } catch (err) {
+        //     console.log(err)
+        // }
     }
 
-}
+
+
+
+    select('products', 'price', '<', 5000)
+// db = {
+
+
+
+//     selectSpecific: function (tableOne, tableTwo, colOne, colTwo, colThree, value, cb) {
+
+//         let queryString = `SELECT * FROM ${tableOne} JOIN ${tableTwo} ON ${tableOne}.${colOne} = ${tableTwo}.${colTwo} WHERE ${tableOne}.${colThree} = ${value}`
+//         connection.query(queryString, function (err, result) {
+//             if (err) {
+//                 throw err;
+//             }
+//             cb(result);
+//         });
+//     },
+
+//     verify: function (tableName, colOne, colTwo, userName, password, cb) {
+//         let queryString = `SELECT * FROM ${tableName} WHERE ${colOne}="${userName}" AND ${colTwo}="${password}"`
+
+//         connection.query(queryString, function (err, result) {
+//             if (err) {
+//                 throw err;
+//             }
+//             cb(result);
+//         });
+
+//     }
+
+// }
