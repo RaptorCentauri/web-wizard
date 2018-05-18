@@ -3,7 +3,14 @@ const myssqlCreator = () => {
     let mysqlFile =
     `
     select = async (tableName, col, expr, val) => {
-        let queryString = \`SELECT * FROM \${ tableName }\`;
+        let queryString;
+
+        if(!col){
+            queryString = \`SELECT * FROM \${ tableName } \`;
+        }
+        else{
+            queryString = \`SELECT * FROM \${ tableName } WHERE \${ col } \${ expr } \${ val }\`;
+        }
 
         try {
             let dbResult = await connection.query(queryString);

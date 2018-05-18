@@ -4,4 +4,5 @@ require('babel-register')({
     plugins: ["transform-object-rest-spread", "transform-class-properties"]
 })
 
-module.exports = require('./index.js')
+// module.exports = require('./index.js')
+module.exports = require('./projectBuilder.js')

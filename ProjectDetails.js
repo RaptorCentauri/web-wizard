@@ -1,8 +1,9 @@
 let ProjectDetails = {
-    name: "Somewhere Over the rainbow",
-    database: null,
-    models: [],
-    folderStructure: null,
+    name: "Beetleborgs",
+    database: 'mongo',
+    models: ['Jo', 'Drew', 'Roland'],
+    folderStructure: 'isolated',
 }
 
 export default ProjectDetails;
+
